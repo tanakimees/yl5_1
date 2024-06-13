@@ -3,7 +3,7 @@ namespace Deployer;
 
 require 'recipe/laravel.php';
 
-// Zone ühendus
+// Zone ühenduss
 set('application', 'yl5');
 set('remote_user', 'virt106855');
 set('http_user', 'virt106855');
