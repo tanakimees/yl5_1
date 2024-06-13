@@ -13,9 +13,9 @@ host('tak21tanak.itmajakas.ee')
     ->setHostname('tak21tanak.itmajakas.ee')
     ->set('http_user', 'virt106855')
     ->set('deploy_path', '~/domeenid/www.tak21tanak.itmajakas.ee/yl5')
-    ->set('branch', 'main');
+    ->set('branch', 'master');
 
-set('repository', 'git@github.com:tanakimees/yl5.git');
+set('repository', 'git@github.com:tanakimees/yl5_1.git');
 
 // tasks
 task('opcache:clear', function () {
