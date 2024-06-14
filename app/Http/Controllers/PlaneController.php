@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Plane;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 class PlaneController extends Controller
 {
@@ -59,9 +60,20 @@ class PlaneController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Plane $plane)
+    public function getOtherData(Plane $plane, Request $request)
     {
-        //
+        $client = new Client();
+
+        $validatedData = $request->validate([
+            'url' => 'required|string|max:255',
+        ]);
+
+        $url = $validatedData['url'];
+
+        $response = $client->get($url);
+        $data = json_decode($response->getBody(), true);
+
+        return $data;
     }
 
     /**

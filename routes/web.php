@@ -32,6 +32,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get("data", [PlaneController::class,'getData']);
+
+Route::get("data/other", [PlaneController::class,'getOtherData'])->name('plane.other');;
+
 Route::post("dashboard", [PlaneController::class, 'store'])->name('plane.store');
 
 require __DIR__.'/auth.php';

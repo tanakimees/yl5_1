@@ -111,5 +111,24 @@
         </div>
     </div>
 
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <form action="{{ route('plane.other') }}" method="GET" enctype="multipart/form-data" class="mt-6 flex">
+            @csrf
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-tl-lg sm:rounded-tr-lg pt-3 p-1 flex justify-between items-center px-5">
+                <label class="text-black dark:text-white" for="url">url:</label>
+                <input type="text" class="form-control @error('url') is-invalid @enderror text-black" id="url"
+                    name="url" value="{{ old('url') }}">
+                @error('url')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="flex justify-end mt-3">
+                <button type="submit" class="btn btn-primary text-black dark:text-white bg-green-500 p-3 rounded-lg">Show another API</button>
+            </div>
+        </form>
+    </div>
+
 
 </x-app-layout>
